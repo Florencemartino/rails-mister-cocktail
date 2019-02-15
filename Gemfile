@@ -29,7 +29,6 @@ gem 'autoprefixer-rails'
 gem 'bootstrap-sass', '~> 3.3.7'
 gem 'font-awesome-sass', '~> 5.0.9'
 gem 'simple_form'
-gem 'sqlite3', '~> 1.3.6'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
