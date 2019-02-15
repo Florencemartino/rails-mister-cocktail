@@ -1,21 +1,22 @@
-.banner {
-  width: 800px;
+h4 {
+  margin-left: 500px;
+  padding-top: 70px;
+  color: red !important;
 }
+
+.card a {
+  color: #F1FAEE;
+  text-decoration: none;
+}
+
 .card {
   height: 175px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
-  color: white;
   position: relative;
 }
-.card-user {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  width: 40px;
-  border-radius: 50%;
-}
+
 .card-category {
   position: absolute;
   top: 10px;
