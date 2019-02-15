@@ -16,10 +16,6 @@
             <% end %>
     </br>
     </br>
-
-
 <p> <%= link_to "Retour au menu", cocktails_path %> </p>
-
 <p class="btn btn-default"> <%= link_to "Ajouter une dose", new_cocktail_dose_path(@cocktail) %> </p>
-
-
+<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>

@@ -9,9 +9,11 @@
 
 <div class="container">
 <% @cocktails.each do |cocktail| %>
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cocktail.photo.blank? ? cl_image_path("mojito.png") : cl_image_path(cocktail.photo, width: 400, height: 300, crop: :fill) %>);">
      <h4> <%= link_to cocktail.name, cocktail_path(cocktail.id) %> </h4>
   </div>
 <% end %>
 </div>
+
+<!-- app/views/articles/index.html.erb -->
 
