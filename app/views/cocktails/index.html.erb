@@ -1,10 +1,23 @@
-<p> Voici mes cocktails : </p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url('<%= image_path('banner.jpg') %>');">
+  <div class="container">
+    <h1>Bienvenue chez CocktailLand !</h1>
+    <p>Avec les cocktails, la fête est bien folle</p>
+    <a class="btn btn-flat" href="#"><%= link_to "Créer un cocktail", new_cocktail_path %></a>
+  </div>
+</div>
 
 
-<ul>
+<div class="container">
 <% @cocktails.each do |cocktail| %>
-<li> <%= link_to cocktail.name, cocktail_path(cocktail.id) %> </li>
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
+    <div class="card-category">Popular</div>
+    <div class="card-description">
+      <h2>Le Wagon Shanghai</h2>
+      <p>Very cool city, the best</p>
+    </div>
+    <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+    <a class="card-link" href="#" ></a>
+    <%= link_to cocktail.name, cocktail_path(cocktail.id) %>
+  </div>
 <% end %>
-</ul>
-
-<p> <%= link_to "Créer un cocktail", new_cocktail_path %> </p>
+</div>

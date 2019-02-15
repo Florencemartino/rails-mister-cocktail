@@ -1,15 +1,25 @@
+<div class="cards">
+
+  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+    Breakfast
+  </div>
+
+</div>
+
 <p> Voici les ingrédients pour faire ton <%= @cocktail['name'] %> :</p>
 
  <% @cocktail.doses.each do |dose|  %>
-    <li> <%= dose.description %> :
-      <%= dose.ingredient.name %> <%= link_to "Delete", cocktail_dose_path(@cocktail, dose), method: :delete %></li>
-        <% end %>
-  </br>
+    <li class="border-show">  <%= dose.description %> :
+          <%= dose.ingredient.name %>
+          <%= link_to "Delete", cocktail_dose_path(@cocktail, dose),
+          method: :delete %></li>
+            <% end %>
+    </br>
     </br>
 
 
 <p> <%= link_to "Retour au menu", cocktails_path %> </p>
 
-<p> <%= link_to "Ajouter une dose", new_cocktail_dose_path(@cocktail) %> </p>
+<p class="btn btn-default"> <%= link_to "Ajouter une dose", new_cocktail_dose_path(@cocktail) %> </p>
 
 
