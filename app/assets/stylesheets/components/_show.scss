@@ -1,0 +1,19 @@
+.wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  margin-top: 15%;
+  padding: 30px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.align-button {
+  display: flex;
+  justify-content: center;
+  margin-top: -20%;
+}

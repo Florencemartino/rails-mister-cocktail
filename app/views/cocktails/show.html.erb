@@ -1,21 +1,24 @@
-<div class="cards">
 
-  <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-    Breakfast
-  </div>
+<div class="wrap">
+  <div class="box">
+    <p> Voici les ingrédients pour faire ton <%= @cocktail['name'] %> :</p>
 
-</div>
-
-<p> Voici les ingrédients pour faire ton <%= @cocktail['name'] %> :</p>
-
- <% @cocktail.doses.each do |dose|  %>
-    <li class="border-show">  <%= dose.description %> :
+      <ul <% @cocktail.doses.each do |dose| %>>
+        <li class="border-show">   <%= dose.description %> :
           <%= dose.ingredient.name %>
           <%= link_to "Delete", cocktail_dose_path(@cocktail, dose),
           method: :delete %></li>
             <% end %>
-    </br>
-    </br>
-<p> <%= link_to "Retour au menu", cocktails_path %> </p>
-<p class="btn btn-default"> <%= link_to "Ajouter une dose", new_cocktail_dose_path(@cocktail) %> </p>
-<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+      </ul>
+      <div class="align-button">
+        <div class="btn btn-success btn-add-dose"> <%= link_to "Ajouter une dose", new_cocktail_dose_path(@cocktail) %>
+        </div>
+        <div class="btn btn-danger btn-delete"> <%= link_to "Effacer la recette", destroy_path(@cocktail.id), method: :delete, data: { confirm: "Are you sure?" } %>
+        </div>
+      </div>
+      <p class="btn-menu"> <%= link_to "Retour au menu", cocktails_path %> </p>
+  </div>
+  <div class="box">
+    <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+  </div>
+</div>

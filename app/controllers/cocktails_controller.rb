@@ -15,6 +15,12 @@ class CocktailsController < ApplicationController
     @cocktail.save
   end
 
+  def destroy
+    @cocktails = Cocktail.find(params[:id])
+    @cocktails.destroy
+    redirect_to :cocktails
+  end
+
   private
 
   def set_cocktail
